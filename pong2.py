@@ -21,26 +21,26 @@ class Pong:
     # player move functions
     def playerL_up(self):
         self.playerL.pos[1] += 10
-        writer.clear(); writer.write("playerL_up"+str(self.playerL.pos))
+        #writer.clear(); writer.write("playerL_up"+str(self.playerL.pos))
 
     def playerR_up(self):
         self.playerR.pos[1] += 10
-        writer.clear(); writer.write("playerR_up"+str(self.playerR.pos))
+        #writer.clear(); writer.write("playerR_up"+str(self.playerR.pos))
 
     def playerL_down(self):
         self.playerL.pos[1] -= 10
-        writer.clear(); writer.write("playerL_down"+str(self.playerL.pos))
+        #writer.clear(); writer.write("playerL_down"+str(self.playerL.pos))
 
     def playerR_down(self):
         self.playerR.pos[1] -= 10
-        writer.clear(); writer.write("playerR_down"+str(self.playerR.pos))
+        #writer.clear(); writer.write("playerR_down"+str(self.playerR.pos))
 
     # MEMBER 2
     def update_ball_pos(self):
         # update ball.pos following dx, dy
 	    self.ball.pos[0] += self.ball.dx
 	    self.ball.pos[1] += self.ball.dy
-        writer.clear(); writer.write("ball_pos"+str(self.ball.pos))
+        #writer.clear(); writer.write("ball_pos"+str(self.ball.pos))
 
     def check_ball_pos(self):
         game_end = False
@@ -68,7 +68,8 @@ class Pong:
 
     # MEMBER 2
     def process_fall(self):
-        
+        if abs(self.ball.pos[0]) >= 350:
+            return True
         return False
 
     # MEMBER 3
